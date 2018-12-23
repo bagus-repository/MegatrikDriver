@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.BidOrderActivity">
+
+    <LinearLayout
+        android:padding="@dimen/spacing_large"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="@dimen/spacing_medium"
+            style="@style/Base.TextAppearance.AppCompat.Title"
+            android:gravity="center"
+            android:text="Bid Baru Diterima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:text="Order ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/tvOrderId"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:text="7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:text="Nama Customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/tvCustomerName"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:text="Bagus Budi Setyawan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:text="Alamat Order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/tvOrderAddress"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:text="Jl. Kauas 7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:text="Jenis Service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/tvOrderServices"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:text="- Pemasangan Lampu\n- Pemasangan saklar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:text="Status Bid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <TextView
+            android:id="@+id/tvOrderStatus"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:text="Masih Tersedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_large" />
+
+        <Button
+            android:id="@+id/btTerima"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_rect_primary"
+            android:text="Terima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_medium" />
+
+        <Button
+            android:id="@+id/btBatal"
+            android:backgroundTint="@color/red_A700"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_rect_primary"
+            android:text="Batal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
