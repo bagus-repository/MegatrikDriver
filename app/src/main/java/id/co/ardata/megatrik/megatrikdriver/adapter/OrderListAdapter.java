@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.crowdfire.cfalertdialog.CFAlertDialog;
+import com.google.gson.Gson;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
 import java.util.HashMap;
@@ -24,6 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.ardata.megatrik.megatrikdriver.R;
 import id.co.ardata.megatrik.megatrikdriver.activity.MaterialOrderActivity;
+import id.co.ardata.megatrik.megatrikdriver.model.ErrorApiMsg;
 import id.co.ardata.megatrik.megatrikdriver.model.Order;
 import id.co.ardata.megatrik.megatrikdriver.model.TechnicianOrdersItem;
 import id.co.ardata.megatrik.megatrikdriver.utils.ApiClient;
@@ -56,7 +58,6 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int pos) {
         TechnicianOrdersItem item = ordersItems.get(pos);
-        if (holder instanceof MyViewHolder) {
             MyViewHolder v = (MyViewHolder) holder;
 
             v.tvOrderId.setText("Order ID "+item.getId());
@@ -68,7 +69,6 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             if (item.getOrderStart() != null){
                 v.llNotKerjakan.setVisibility(View.GONE);
             }
-        }
     }
 
     @Override
@@ -104,10 +104,12 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         KProgressHUD progressHUD;
         ApiInterface apiInterface;
+        Gson gson;
 
         public MyViewHolder(View v) {
             super(v);
             ButterKnife.bind(this, v);
+            gson = new Gson();
 
             btNavigasi.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -204,7 +206,8 @@ public class OrderListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                         llKerjakan.setVisibility(View.GONE);
                         llNotKerjakan.setVisibility(View.GONE);
                     }else {
-                        Tools.Tshort(mContext, "Gagal coba lagi");
+                        ErrorApiMsg errorApiMsg = gson.fromJson(response.errorBody().charStream(), ErrorApiMsg.class);
+                        Tools.Tshort(mContext, errorApiMsg.getMessage());
                     }
                 }
 

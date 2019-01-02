@@ -127,9 +127,7 @@ public class HomeFragment extends Fragment {
         ivSearchJob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toBid = new Intent(mContext, BidOrderActivity.class);
-                toBid.putExtra("order_id", 22);
-                mContext.startActivity(toBid);
+                Tools.Tshort(mContext, "Fitur belum tersedia");
 //                Intent intent = new Intent(mContext, SearchOrderActivity.class);
 //                startActivity(intent);
             }

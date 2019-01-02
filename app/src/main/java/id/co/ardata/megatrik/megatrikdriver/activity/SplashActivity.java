@@ -29,14 +29,14 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Intent intent;
                 if (sessionManager.isLoggedIn()){
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    intent = new Intent(SplashActivity.this, MainActivity.class);
                 }else {
-                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                    startActivity(intent);
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
                 }
                 handler.removeCallbacks(this);
+                startActivity(intent);
                 finish();
             }
         }, 2000);

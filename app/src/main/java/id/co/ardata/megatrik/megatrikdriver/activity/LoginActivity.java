@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
 
             HashMap<String, String> params = new HashMap<>();
             params.put("grant_type", "password");
-            params.put("client_id", "4");
+            params.put("client_id", "2");
             params.put("client_secret", secret_token);
             params.put("username", tietEmail.getText().toString());
             params.put("password", tietPassword.getText().toString());

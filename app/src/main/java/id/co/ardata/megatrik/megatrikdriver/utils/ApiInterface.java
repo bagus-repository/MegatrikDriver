@@ -30,7 +30,7 @@ public interface ApiInterface {
      * List api user dan authnya
      * @return
      */
-    @GET(ApiConfig.API_URL+"oauthclients/4")
+    @GET(ApiConfig.API_URL+"oauthclients/2")
     Call<OAuthSecret> getOAuthSecret();
 
     @FormUrlEncoded

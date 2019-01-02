@@ -76,8 +76,7 @@
                     android:padding="@dimen/spacing_medium"
                     android:text="Navigasi"
                     android:textColor="@color/white"
-                    android:background="@color/blue_600"
-                    app:srcCompat="@drawable/add_material" />
+                    android:background="@color/blue_600" />
 
                 <Button
                     android:id="@+id/btKerjakan"
@@ -87,8 +86,7 @@
                     android:text="Kerjakan"
                     android:textColor="@color/white"
                     android:padding="@dimen/spacing_medium"
-                    android:background="@color/green_500"
-                    app:srcCompat="@drawable/make_navigasi" />
+                    android:background="@color/green_500" />
 
             </LinearLayout>
 
