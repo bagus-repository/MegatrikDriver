@@ -71,10 +71,10 @@ public class HomeFragment extends Fragment {
     Toolbar toolbar;
     @BindView(R.id.ivSearchJob)
     ImageView ivSearchJob;
-    @BindView(R.id.ivSaldo)
-    ImageView ivSaldo;
-    @BindView(R.id.ivBantuan)
-    ImageView ivBantuan;
+//    @BindView(R.id.ivSaldo)
+//    ImageView ivSaldo;
+//    @BindView(R.id.ivBantuan)
+//    ImageView ivBantuan;
 
     ImageSliderAdapter imageSliderAdapter;
     ApiInterface apiInterface;
@@ -127,9 +127,8 @@ public class HomeFragment extends Fragment {
         ivSearchJob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Tools.Tshort(mContext, "Fitur belum tersedia");
-//                Intent intent = new Intent(mContext, SearchOrderActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(mContext, SearchOrderActivity.class);
+                startActivity(intent);
             }
         });
 

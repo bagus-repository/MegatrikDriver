@@ -111,7 +111,7 @@ public class BidOrderActivity extends AppCompatActivity {
                 }else {
                     builder.setMessage("Maaf order sudah terbid.");
                 }
-                builder.setCancelable(true)
+                builder.setCancelable(false)
                     .addButton("OK", getResources().getColor(R.color.white), getResources().getColor(R.color.red_A700), CFAlertDialog.CFAlertActionStyle.POSITIVE, CFAlertDialog.CFAlertActionAlignment.END, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {

@@ -121,6 +121,9 @@ public interface ApiInterface {
             @Path("id") String order_id
     );
 
+    @GET(ApiConfig.API_URL+"order/notaccepted")
+    Call<List<Order>> getOrderNotAccpeted();
+
     /**
      * Material
      * @return
