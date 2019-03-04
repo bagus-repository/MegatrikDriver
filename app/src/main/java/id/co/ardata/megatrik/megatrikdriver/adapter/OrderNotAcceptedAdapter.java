@@ -1,6 +1,5 @@
 package id.co.ardata.megatrik.megatrikdriver.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
@@ -21,6 +20,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import id.co.ardata.megatrik.megatrikdriver.R;
+import id.co.ardata.megatrik.megatrikdriver.activity.SearchOrderActivity;
 import id.co.ardata.megatrik.megatrikdriver.model.Order;
 import id.co.ardata.megatrik.megatrikdriver.utils.ApiClient;
 import id.co.ardata.megatrik.megatrikdriver.utils.ApiInterface;
@@ -132,7 +132,7 @@ public class OrderNotAcceptedAdapter extends RecyclerView.Adapter {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     dialogInterface.dismiss();
-                                    ((Activity) ctx).recreate();
+                                    ((SearchOrderActivity) ctx).generate_order_not_accepted();
                                 }
                             });
                     builder.show();

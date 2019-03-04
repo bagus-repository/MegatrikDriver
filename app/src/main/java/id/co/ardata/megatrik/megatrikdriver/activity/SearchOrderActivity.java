@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.kaopiz.kprogresshud.KProgressHUD;
@@ -48,7 +49,7 @@ public class SearchOrderActivity extends AppCompatActivity {
 
         mContext = this;
         apiInterface = ApiClient.getApiClient(mContext, true);
-        toolbar.setTitle("List Material");
+        toolbar.setTitle("Cari Pekerjaan");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -65,7 +66,7 @@ public class SearchOrderActivity extends AppCompatActivity {
         generate_order_not_accepted();
     }
 
-    private void generate_order_not_accepted() {
+    public void generate_order_not_accepted() {
         swipeRefreshLayout.setRefreshing(true);
 
         Call<List<Order>> call = apiInterface.getOrderNotAccpeted();
@@ -74,9 +75,15 @@ public class SearchOrderActivity extends AppCompatActivity {
             public void onResponse(Call<List<Order>> call, Response<List<Order>> response) {
                 swipeRefreshLayout.setRefreshing(false);
                 if (response.isSuccessful()){
-                    mAdapter = new OrderNotAcceptedAdapter(mContext, response.body());
-                    mAdapter.notifyDataSetChanged();
-                    recyclerView.setAdapter(mAdapter);
+                    List<Order> orders = response.body();
+                    Log.d("cari pekerjaan", orders.toString());
+                    if (orders.isEmpty()){
+                        Tools.Tshort(mContext, "Tidak ada pekerjaan");
+                    }else {
+                        mAdapter = new OrderNotAcceptedAdapter(mContext, response.body());
+                        mAdapter.notifyDataSetChanged();
+                        recyclerView.setAdapter(mAdapter);
+                    }
                 }else {
                     ErrorApiMsg errorApiMsg = gson.fromJson(response.errorBody().charStream(), ErrorApiMsg.class);
                     Tools.Tshort(mContext, errorApiMsg.getMessage());
