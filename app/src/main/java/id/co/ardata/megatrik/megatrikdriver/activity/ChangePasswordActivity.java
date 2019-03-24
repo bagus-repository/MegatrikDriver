@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.crowdfire.cfalertdialog.CFAlertDialog;
 import com.kaopiz.kprogresshud.KProgressHUD;
@@ -60,6 +61,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
         mContext = this;
         sessionManager = new SessionManager(mContext);
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         btUbah.setOnClickListener(new View.OnClickListener() {
             @Override

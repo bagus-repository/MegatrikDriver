@@ -199,9 +199,15 @@ public class MaterialOrderActivity extends AppCompatActivity {
         ((Button) dialog.findViewById(R.id.bt_save)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String material_list_id = String.valueOf(materialsItems.get(spnMaterial.getSelectedItemPosition()).getId());
+                String material_list_id;
                 String quantity = etQty.getText().toString();
                 boolean valid = true;
+
+                try {
+                    material_list_id = String.valueOf(materialsItems.get(spnMaterial.getSelectedItemPosition()).getId());
+                }catch (Exception e){
+                    material_list_id = null;
+                }
 
                 if (order_id == 0){
                     Tools.Tshort(mContext, "Order id kosong");
